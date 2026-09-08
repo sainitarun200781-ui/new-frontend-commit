@@ -50,83 +50,64 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="hidden lg:flex justify-end animate-in fade-in duration-1000 delay-300">
-            <div className="relative w-full max-w-lg aspect-square">
-              {/* Detailed decorative elements simulating a secure dashboard */}
-              <div className="absolute inset-0 bg-slate-950 border border-slate-800 shadow-2xl overflow-hidden flex flex-col font-mono text-sm">
-                {/* Window Controls */}
-                <div className="h-10 border-b border-slate-800 bg-slate-900 flex items-center px-4 justify-between">
-                  <div className="flex space-x-2">
-                    <div className="h-3 w-3 bg-rose-500 rounded-full" />
-                    <div className="h-3 w-3 bg-amber-500 rounded-full" />
-                    <div className="h-3 w-3 bg-emerald-500 rounded-full" />
-                  </div>
-                  <div className="text-slate-500 text-xs">system_node_01 / verify</div>
-                </div>
-                
-                {/* Dashboard Content */}
-                <div className="p-6 space-y-6 flex-1 flex flex-col">
-                  {/* Top Status */}
-                  <div className="flex justify-between items-end border-b border-slate-800 pb-4">
-                    <div>
-                      <div className="text-cyan-400 text-xs mb-1">LIVE ANALYSIS TARGET</div>
-                      <div className="text-white font-bold text-lg font-sans">TENDER-2026-X89</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="flex items-center space-x-2 text-emerald-400">
-                        <div className="h-2 w-2 bg-emerald-400 rounded-full animate-pulse" />
-                        <span>SCANNING</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Two Stats Cards */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-slate-900 border border-slate-800 p-4 relative overflow-hidden group">
-                      <div className="absolute top-0 left-0 w-1 h-full bg-cyan-500" />
-                      <div className="text-slate-500 text-xs mb-2">DOCUMENTS PARSED</div>
-                      <div className="text-2xl text-white font-bold">1,492</div>
-                      <div className="mt-4 h-1 w-full bg-slate-800"><div className="h-full w-3/4 bg-cyan-500" /></div>
-                    </div>
-                    <div className="bg-slate-900 border border-slate-800 p-4 relative overflow-hidden group">
-                      <div className="absolute top-0 left-0 w-1 h-full bg-amber-500" />
-                      <div className="text-slate-500 text-xs mb-2">RISKS DETECTED</div>
-                      <div className="text-2xl text-white font-bold flex items-baseline space-x-2">
-                        <span>14</span>
-                        <span className="text-xs text-amber-500 bg-amber-500/10 px-1">+2 new</span>
-                      </div>
-                      <div className="mt-4 h-1 w-full bg-slate-800"><div className="h-full w-1/4 bg-amber-500" /></div>
-                    </div>
-                  </div>
-
-                  {/* Terminal Log Box */}
-                  <div className="flex-1 bg-[#0a0a0a] border border-slate-800 p-4 overflow-hidden relative">
-                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-[#0a0a0a] pointer-events-none" />
-                    <div className="space-y-2 text-xs opacity-80">
-                      <div className="text-slate-400"><span className="text-slate-600">[10:45:01]</span> INIT: Starting compliance verification...</div>
-                      <div className="text-slate-400"><span className="text-slate-600">[10:45:01]</span> CONNECTING: GSTN Public API... <span className="text-emerald-400">OK</span></div>
-                      <div className="text-slate-400"><span className="text-slate-600">[10:45:02]</span> CHECK: GSTN Cross-match... <span className="text-emerald-400">MATCHED</span></div>
-                      <div className="text-slate-400"><span className="text-slate-600">[10:45:03]</span> OCR: Extracting text from Bidder_04.pdf...</div>
-                      <div className="text-amber-400"><span className="text-slate-600">[10:45:04]</span> WARN: PDF Metadata altered (Adobe Photoshop 2024)</div>
-                      <div className="text-rose-400"><span className="text-slate-600">[10:45:04]</span> ALERT: Potential forgery detected on Page 3.</div>
-                      <div className="text-slate-400"><span className="text-slate-600">[10:45:05]</span> FLAGGING: Bidder_04 marked as HIGH RISK.</div>
-                      <div className="text-slate-400 flex items-center"><span className="text-slate-600 mr-2">[10:45:06]</span> Awaiting next batch<span className="animate-pulse">...</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="relative w-full max-w-lg aspect-square flex items-center justify-center">
               
-              {/* Floating element */}
-              <div className="absolute -bottom-6 -left-6 bg-slate-900 border border-slate-700 p-6 shadow-2xl animate-bounce" style={{ animationDuration: '3s' }}>
-                <div className="flex items-center space-x-4">
-                  <div className="h-12 w-12 bg-cyan-500/10 flex items-center justify-center">
-                    <ShieldCheck className="h-6 w-6 text-cyan-400" />
-                  </div>
-                  <div>
-                    <div className="text-white font-bold text-lg">98.4% Accuracy</div>
-                    <div className="text-slate-400 text-sm">AI Tamper Detection</div>
-                  </div>
+              {/* Minimalist Data Rings (SVG) */}
+              <div className="relative w-[320px] h-[320px] flex items-center justify-center">
+                {/* Glowing glow effect behind */}
+                <div className="absolute inset-0 bg-cyan-500/10 blur-[60px] rounded-full" />
+                
+                <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                  {/* Outer Ring: Security (Cyan) */}
+                  <circle cx="50" cy="50" r="42" stroke="#1e293b" strokeWidth="4" fill="none" />
+                  <circle cx="50" cy="50" r="42" stroke="#22d3ee" strokeWidth="4" fill="none" 
+                          strokeLinecap="round" strokeDasharray="263.89" strokeDashoffset="40" 
+                          className="drop-shadow-[0_0_8px_rgba(34,211,238,0.6)] animate-[pulse_4s_ease-in-out_infinite]" />
+                  
+                  {/* Middle Ring: Compliance (Emerald) */}
+                  <circle cx="50" cy="50" r="32" stroke="#1e293b" strokeWidth="4" fill="none" />
+                  <circle cx="50" cy="50" r="32" stroke="#34d399" strokeWidth="4" fill="none" 
+                          strokeLinecap="round" strokeDasharray="201.06" strokeDashoffset="60" 
+                          className="drop-shadow-[0_0_8px_rgba(52,211,153,0.6)] animate-[pulse_5s_ease-in-out_infinite_reverse]" />
+                  
+                  {/* Inner Ring: Risk (Amber) */}
+                  <circle cx="50" cy="50" r="22" stroke="#1e293b" strokeWidth="4" fill="none" />
+                  <circle cx="50" cy="50" r="22" stroke="#fbbf24" strokeWidth="4" fill="none" 
+                          strokeLinecap="round" strokeDasharray="138.23" strokeDashoffset="25" 
+                          className="drop-shadow-[0_0_8px_rgba(251,191,36,0.6)] animate-[pulse_3s_ease-in-out_infinite]" />
+                </svg>
+
+                {/* Center Icon */}
+                <div className="absolute inset-0 flex items-center justify-center flex-col">
+                  <ShieldCheck className="h-10 w-10 text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]" />
                 </div>
               </div>
+
+              {/* Floating Labels */}
+              <div className="absolute top-10 right-4 bg-slate-900 border border-slate-800 px-4 py-3 shadow-xl flex items-center space-x-3 rounded-none animate-bounce" style={{ animationDuration: '4s' }}>
+                <div className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
+                <div>
+                  <div className="text-white font-bold text-sm">Security</div>
+                  <div className="text-cyan-400 text-xs">AES-256</div>
+                </div>
+              </div>
+
+              <div className="absolute bottom-24 -left-4 bg-slate-900 border border-slate-800 px-4 py-3 shadow-xl flex items-center space-x-3 rounded-none animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '1s' }}>
+                <div className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
+                <div>
+                  <div className="text-white font-bold text-sm">Compliance</div>
+                  <div className="text-emerald-400 text-xs">99.9% Match</div>
+                </div>
+              </div>
+
+              <div className="absolute bottom-6 right-12 bg-slate-900 border border-slate-800 px-4 py-3 shadow-xl flex items-center space-x-3 rounded-none animate-bounce" style={{ animationDuration: '4.5s', animationDelay: '0.5s' }}>
+                <div className="h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_8px_#fbbf24]" />
+                <div>
+                  <div className="text-white font-bold text-sm">Risk Score</div>
+                  <div className="text-amber-400 text-xs">Minimal</div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
