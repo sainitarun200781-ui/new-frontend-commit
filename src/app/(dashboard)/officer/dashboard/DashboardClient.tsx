@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { FileText, Users, AlertTriangle, ShieldCheck } from "lucide-react";
+import UploadDatasetButton from "./UploadDatasetButton";
 import { 
   BarChart, 
   Bar, 
@@ -40,9 +41,12 @@ export default function DashboardClient({
 
   return (
     <div className="space-y-10 pb-10">
-      <div className="pb-4 border-b border-slate-200">
-        <h2 className="text-3xl font-bold tracking-tight text-slate-900">Procurement Overview</h2>
-        <p className="text-slate-500 mt-2 text-sm">Monitor active tenders and bid compliance across all departments.</p>
+      <div className="pb-4 border-b border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900">Procurement Overview</h2>
+          <p className="text-slate-500 mt-2 text-sm">Monitor active tenders and bid compliance across all departments.</p>
+        </div>
+        <UploadDatasetButton />
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
