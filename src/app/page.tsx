@@ -51,29 +51,72 @@ export default function LandingPage() {
           </div>
           <div className="hidden lg:flex justify-end animate-in fade-in duration-1000 delay-300">
             <div className="relative w-full max-w-lg aspect-square">
-              {/* Abstract decorative elements simulating a secure dashboard */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-800 border border-slate-700 shadow-2xl overflow-hidden flex flex-col">
-                <div className="h-10 border-b border-slate-700 bg-slate-900/50 flex items-center px-4 space-x-2">
-                  <div className="h-3 w-3 bg-rose-500 rounded-full" />
-                  <div className="h-3 w-3 bg-amber-500 rounded-full" />
-                  <div className="h-3 w-3 bg-emerald-500 rounded-full" />
+              {/* Detailed decorative elements simulating a secure dashboard */}
+              <div className="absolute inset-0 bg-slate-950 border border-slate-800 shadow-2xl overflow-hidden flex flex-col font-mono text-sm">
+                {/* Window Controls */}
+                <div className="h-10 border-b border-slate-800 bg-slate-900 flex items-center px-4 justify-between">
+                  <div className="flex space-x-2">
+                    <div className="h-3 w-3 bg-rose-500 rounded-full" />
+                    <div className="h-3 w-3 bg-amber-500 rounded-full" />
+                    <div className="h-3 w-3 bg-emerald-500 rounded-full" />
+                  </div>
+                  <div className="text-slate-500 text-xs">system_node_01 / verify</div>
                 </div>
-                <div className="p-8 space-y-6">
-                  <div className="h-8 w-3/4 bg-slate-800" />
-                  <div className="h-4 w-1/2 bg-slate-800" />
-                  <div className="grid grid-cols-2 gap-4 pt-4">
-                    <div className="h-24 bg-slate-800 border border-slate-700 p-4 flex flex-col justify-end">
-                      <div className="h-2 w-full bg-cyan-500/20"><div className="h-full w-3/4 bg-cyan-500" /></div>
+                
+                {/* Dashboard Content */}
+                <div className="p-6 space-y-6 flex-1 flex flex-col">
+                  {/* Top Status */}
+                  <div className="flex justify-between items-end border-b border-slate-800 pb-4">
+                    <div>
+                      <div className="text-cyan-400 text-xs mb-1">LIVE ANALYSIS TARGET</div>
+                      <div className="text-white font-bold text-lg font-sans">TENDER-2026-X89</div>
                     </div>
-                    <div className="h-24 bg-slate-800 border border-slate-700 p-4 flex flex-col justify-end">
-                      <div className="h-2 w-full bg-amber-500/20"><div className="h-full w-1/2 bg-amber-500" /></div>
+                    <div className="text-right">
+                      <div className="flex items-center space-x-2 text-emerald-400">
+                        <div className="h-2 w-2 bg-emerald-400 rounded-full animate-pulse" />
+                        <span>SCANNING</span>
+                      </div>
                     </div>
                   </div>
-                  <div className="h-32 w-full bg-slate-800 border border-slate-700" />
+
+                  {/* Two Stats Cards */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-slate-900 border border-slate-800 p-4 relative overflow-hidden group">
+                      <div className="absolute top-0 left-0 w-1 h-full bg-cyan-500" />
+                      <div className="text-slate-500 text-xs mb-2">DOCUMENTS PARSED</div>
+                      <div className="text-2xl text-white font-bold">1,492</div>
+                      <div className="mt-4 h-1 w-full bg-slate-800"><div className="h-full w-3/4 bg-cyan-500" /></div>
+                    </div>
+                    <div className="bg-slate-900 border border-slate-800 p-4 relative overflow-hidden group">
+                      <div className="absolute top-0 left-0 w-1 h-full bg-amber-500" />
+                      <div className="text-slate-500 text-xs mb-2">RISKS DETECTED</div>
+                      <div className="text-2xl text-white font-bold flex items-baseline space-x-2">
+                        <span>14</span>
+                        <span className="text-xs text-amber-500 bg-amber-500/10 px-1">+2 new</span>
+                      </div>
+                      <div className="mt-4 h-1 w-full bg-slate-800"><div className="h-full w-1/4 bg-amber-500" /></div>
+                    </div>
+                  </div>
+
+                  {/* Terminal Log Box */}
+                  <div className="flex-1 bg-[#0a0a0a] border border-slate-800 p-4 overflow-hidden relative">
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-[#0a0a0a] pointer-events-none" />
+                    <div className="space-y-2 text-xs opacity-80">
+                      <div className="text-slate-400"><span className="text-slate-600">[10:45:01]</span> INIT: Starting compliance verification...</div>
+                      <div className="text-slate-400"><span className="text-slate-600">[10:45:01]</span> CONNECTING: GSTN Public API... <span className="text-emerald-400">OK</span></div>
+                      <div className="text-slate-400"><span className="text-slate-600">[10:45:02]</span> CHECK: GSTN Cross-match... <span className="text-emerald-400">MATCHED</span></div>
+                      <div className="text-slate-400"><span className="text-slate-600">[10:45:03]</span> OCR: Extracting text from Bidder_04.pdf...</div>
+                      <div className="text-amber-400"><span className="text-slate-600">[10:45:04]</span> WARN: PDF Metadata altered (Adobe Photoshop 2024)</div>
+                      <div className="text-rose-400"><span className="text-slate-600">[10:45:04]</span> ALERT: Potential forgery detected on Page 3.</div>
+                      <div className="text-slate-400"><span className="text-slate-600">[10:45:05]</span> FLAGGING: Bidder_04 marked as HIGH RISK.</div>
+                      <div className="text-slate-400 flex items-center"><span className="text-slate-600 mr-2">[10:45:06]</span> Awaiting next batch<span className="animate-pulse">...</span></div>
+                    </div>
+                  </div>
                 </div>
               </div>
+              
               {/* Floating element */}
-              <div className="absolute -bottom-6 -left-6 bg-slate-900 border border-cyan-500/50 p-6 shadow-2xl shadow-cyan-900/20 animate-bounce">
+              <div className="absolute -bottom-6 -left-6 bg-slate-900 border border-slate-700 p-6 shadow-2xl animate-bounce" style={{ animationDuration: '3s' }}>
                 <div className="flex items-center space-x-4">
                   <div className="h-12 w-12 bg-cyan-500/10 flex items-center justify-center">
                     <ShieldCheck className="h-6 w-6 text-cyan-400" />
